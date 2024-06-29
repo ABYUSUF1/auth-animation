@@ -48,7 +48,7 @@ class _AuthPageState extends State<AuthPage> {
         child: PageView(
           controller: pageController,
           physics: const NeverScrollableScrollPhysics(),
-          children: [
+          children: <Widget>[
             SignInPage(pageController: pageController),
             SignUpPage(pageController: pageController),
           ],
