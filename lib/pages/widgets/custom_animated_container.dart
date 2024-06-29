@@ -23,12 +23,15 @@ class CustomAnimatedContainer extends StatefulWidget {
 
 class _CustomAnimatedContainerState extends State<CustomAnimatedContainer>
     with SingleTickerProviderStateMixin {
-  late AnimationController animationController;
+  late final AnimationController animationController;
   late final Animation<AlignmentGeometry> alignAnimation;
+
+  bool isResizeAnimationComplete = false;
 
   @override
   void initState() {
     super.initState();
+
     animationController = AnimationController(vsync: this, duration: duration);
 
     alignAnimation = Tween<AlignmentGeometry>(
@@ -54,7 +57,6 @@ class _CustomAnimatedContainerState extends State<CustomAnimatedContainer>
     super.dispose();
   }
 
-  bool isResizeAnimationComplete = false;
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
